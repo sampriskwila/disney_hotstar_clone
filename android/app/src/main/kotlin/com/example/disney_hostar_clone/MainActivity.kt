@@ -1,4 +1,4 @@
-package com.example.disney_hostar_clone
+package com.example.disney_hotstar_clone
 
 import io.flutter.embedding.android.FlutterActivity
 

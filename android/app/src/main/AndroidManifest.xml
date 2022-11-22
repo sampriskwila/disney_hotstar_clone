@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.disney_hostar_clone">
+    package="com.example.disney_hotstar_clone">
    <application
-        android:label="disney_hostar_clone"
+        android:label="disney_hotstar_clone"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

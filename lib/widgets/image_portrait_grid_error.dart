@@ -12,14 +12,17 @@ class ImagePortraitGridError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-          elevation: 0,
-        ),
-        body: Center(
-          child: Text(error),
+    return Container(
+      color: const Color(0xFF0c111b),
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(title),
+            elevation: 0,
+          ),
+          body: Center(
+            child: Text(error),
+          ),
         ),
       ),
     );

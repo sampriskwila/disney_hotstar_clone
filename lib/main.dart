@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'repositories/repositories.dart';
@@ -6,11 +7,15 @@ import 'route/route.dart';
 import 'screens/screens.dart';
 
 void main() {
-  runApp(const MyApp());
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+    statusBarColor: Colors.white, // for Android
+    statusBarBrightness: Brightness.dark, // for iOS
+  ));
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,7 @@ class MyApp extends StatelessWidget {
             unselectedItemColor: Colors.white54,
           ),
           drawerTheme: const DrawerThemeData(
-            backgroundColor: Color(0xFF192133),
+            backgroundColor: Color(0xFF0c111b),
           ),
         ),
         home: const SplashScreen(),

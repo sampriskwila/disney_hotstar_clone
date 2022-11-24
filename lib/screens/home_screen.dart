@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: ListView(
         controller: scrollController,
+        padding: const EdgeInsets.symmetric(vertical: 8),
         children: const [
           ImageCarousel(),
           SizedBox(height: 8),

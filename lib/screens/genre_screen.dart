@@ -15,7 +15,7 @@ class GenreScreen extends StatelessWidget {
         repository: TMDBRepository(),
       )..add(LoadGenresEvent()),
       child: Container(
-        color: const Color(0xFF0c111b),
+        color: const Color(0xFF192133),
         child: SafeArea(
           child: Scaffold(
             body: CustomScrollView(

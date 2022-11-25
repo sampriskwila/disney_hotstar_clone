@@ -7,9 +7,7 @@ import 'route/route.dart';
 import 'screens/screens.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
-    statusBarBrightness: Brightness.dark, // for iOS
-  ));
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
   runApp(const App());
 }
 

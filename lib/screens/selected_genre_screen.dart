@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/bloc.dart';
@@ -45,7 +44,6 @@ class SelectedGenreContent extends StatefulWidget {
 }
 
 class _SelectedGenreContentState extends State<SelectedGenreContent> {
-  bool _showAppBar = true;
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -57,18 +55,6 @@ class _SelectedGenreContentState extends State<SelectedGenreContent> {
       if (currentScroll >= (maxScroll * 0.9)) {
         BlocProvider.of<MoviesByGenreBloc>(context)
             .add(LoadMoviesByGenreEvent(widget.movieId));
-      }
-
-      if (_scrollController.position.userScrollDirection ==
-          ScrollDirection.forward) {
-        setState(() {
-          _showAppBar = true;
-        });
-      } else if (_scrollController.position.userScrollDirection ==
-          ScrollDirection.reverse) {
-        setState(() {
-          _showAppBar = false;
-        });
       }
     });
     super.initState();
@@ -88,7 +74,6 @@ class _SelectedGenreContentState extends State<SelectedGenreContent> {
           return ImagePortraitGrid(
             scrollController: _scrollController,
             movies: state.movies,
-            showAppBar: _showAppBar,
             title: widget.title,
           );
         }

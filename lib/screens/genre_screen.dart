@@ -21,9 +21,9 @@ class GenreScreen extends StatelessWidget {
             body: CustomScrollView(
               slivers: [
                 SliverAppBar(
+                  title: const Text('Genres'),
                   floating: true,
                   elevation: 0,
-                  title: const Text('Genres'),
                   actions: [
                     IconButton(
                       icon: const Icon(Icons.search),

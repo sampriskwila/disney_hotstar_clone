@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SeriesScreen extends StatelessWidget {
-  final ScrollController? scrollController;
-
   const SeriesScreen({
     super.key,
-    this.scrollController,
   });
 
   @override

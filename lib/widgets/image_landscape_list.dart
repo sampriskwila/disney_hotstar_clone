@@ -75,10 +75,13 @@ class ImageLandscapeList extends StatelessWidget {
                   ),
                 Container(
                   height: height / 3,
-                  width: double.infinity,
                   alignment: Alignment.bottomLeft,
                   padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.symmetric(horizontal: 4),
                   decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.vertical(
+                      bottom: Radius.circular(8),
+                    ),
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,

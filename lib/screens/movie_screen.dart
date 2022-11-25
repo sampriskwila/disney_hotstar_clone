@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MovieScreen extends StatelessWidget {
-  final ScrollController? scrollController;
-
   const MovieScreen({
     super.key,
-    this.scrollController,
   });
 
   @override

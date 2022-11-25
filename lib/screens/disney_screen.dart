@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DisneyScreen extends StatelessWidget {
-  final ScrollController? scrollController;
-
   const DisneyScreen({
     super.key,
-    this.scrollController,
   });
 
   @override

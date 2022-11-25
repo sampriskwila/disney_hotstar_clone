@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../bloc/bloc.dart';
-import '../widgets/widgets.dart';
 import 'screens.dart';
 
 class RootScreen extends StatefulWidget {
@@ -15,33 +13,7 @@ class RootScreen extends StatefulWidget {
 }
 
 class _RootScreenState extends State<RootScreen> {
-  bool _showAppBar = true;
-  final ScrollController scrollController = ScrollController();
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-
-  @override
-  void initState() {
-    scrollController.addListener(() {
-      if (scrollController.position.userScrollDirection ==
-          ScrollDirection.forward) {
-        setState(() {
-          _showAppBar = true;
-        });
-      } else if (scrollController.position.userScrollDirection ==
-          ScrollDirection.reverse) {
-        setState(() {
-          _showAppBar = false;
-        });
-      }
-    });
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    scrollController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,17 +24,6 @@ class _RootScreenState extends State<RootScreen> {
         child: SafeArea(
           child: Scaffold(
             key: _key,
-            appBar: PreferredSize(
-              preferredSize: const Size.fromHeight(kToolbarHeight),
-              child: AnimatedContainer(
-                height: _showAppBar
-                    ? kToolbarHeight + MediaQuery.of(context).padding.top
-                    : 0,
-                duration: const Duration(milliseconds: 200),
-                child:
-                    const CustomAppBar(logo: 'assets/disney_hotstar_logo.svg'),
-              ),
-            ),
             drawer: Drawer(
               child: ListView(
                 children: [
@@ -154,15 +115,15 @@ class _RootScreenState extends State<RootScreen> {
             body: BlocBuilder<BottomNavbarBloc, BottomNavbarState>(
               builder: (context, state) {
                 if (state is BottomNavbarSeries) {
-                  return SeriesScreen(scrollController: scrollController);
+                  return const SeriesScreen();
                 } else if (state is BottomNavbarDisney) {
-                  return DisneyScreen(scrollController: scrollController);
+                  return const DisneyScreen();
                 } else if (state is BottomNavbarMovie) {
-                  return MovieScreen(scrollController: scrollController);
+                  return const MovieScreen();
                 } else if (state is BottomNavbarLocal) {
-                  return LocalScreen(scrollController: scrollController);
+                  return const LocalScreen();
                 }
-                return HomeScreen(scrollController: scrollController);
+                return const HomeScreen();
               },
             ),
             bottomNavigationBar:
@@ -174,9 +135,6 @@ class _RootScreenState extends State<RootScreen> {
                   onTap: (value) {
                     BlocProvider.of<BottomNavbarBloc>(context)
                         .add(ChangeBottomNavbarEvent(value));
-                    setState(() {
-                      _showAppBar = true;
-                    });
                   },
                   type: BottomNavigationBarType.fixed,
                   selectedFontSize: 12,

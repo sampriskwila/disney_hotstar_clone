@@ -26,17 +26,17 @@ class App extends StatelessWidget {
         initialRoute: '/',
         onGenerateRoute: RouteGenerator.generateRoute,
         theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: const Color(0xFF0c111b),
+          scaffoldBackgroundColor: const Color(0xFF192133),
           appBarTheme: const AppBarTheme(
-            backgroundColor: Color(0xFF0c111b),
+            backgroundColor: Color(0xFF192133),
           ),
           bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-            backgroundColor: Color(0xFF0c111b),
+            backgroundColor: Color(0xFF192133),
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.white54,
           ),
           drawerTheme: const DrawerThemeData(
-            backgroundColor: Color(0xFF0c111b),
+            backgroundColor: Color(0xFF192133),
           ),
         ),
         home: const SplashScreen(),

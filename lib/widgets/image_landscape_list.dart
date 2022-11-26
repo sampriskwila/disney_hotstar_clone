@@ -36,8 +36,8 @@ class ImageLandscapeList extends StatelessWidget {
               children: [
                 if (images[index].backdropPath != null)
                   CachedNetworkImage(
-                    imageUrl:
-                        Const.backdropImageUrl + images[index].backdropPath!,
+                    imageUrl: AppConstants.backdropImageUrl +
+                        images[index].backdropPath!,
                     imageBuilder: (context, imageProvider) {
                       return Container(
                         margin: const EdgeInsets.symmetric(horizontal: 4),

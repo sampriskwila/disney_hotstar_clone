@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'repositories/repositories.dart';
 import 'route/route.dart';
 import 'screens/screens.dart';
+import 'styles/styles.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
@@ -23,20 +24,7 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         onGenerateRoute: RouteGenerator.generateRoute,
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: const Color(0xFF192133),
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Color(0xFF192133),
-          ),
-          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-            backgroundColor: Color(0xFF192133),
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white54,
-          ),
-          drawerTheme: const DrawerThemeData(
-            backgroundColor: Color(0xFF192133),
-          ),
-        ),
+        theme: AppThemes.darkTheme,
         home: const SplashScreen(),
       ),
     );

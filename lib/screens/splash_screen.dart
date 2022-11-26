@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: SvgPicture.asset(
           'assets/disney_plus.svg',
-          height: Const.screenWidth(context) / 3,
+          height: AppConstants.screenWidth(context) / 3,
         ),
       ),
     );

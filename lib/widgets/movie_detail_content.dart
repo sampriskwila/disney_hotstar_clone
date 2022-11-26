@@ -47,7 +47,8 @@ class MovieDetailContent extends StatelessWidget {
                       children: [
                         if (movie.posterPath != null)
                           CachedNetworkImage(
-                            imageUrl: Const.posterImageUrl + movie.posterPath!,
+                            imageUrl:
+                                AppConstants.posterImageUrl + movie.posterPath!,
                             imageBuilder: (context, imageProvider) {
                               return Container(
                                 width: width,

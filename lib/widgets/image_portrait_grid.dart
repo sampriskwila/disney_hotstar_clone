@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
 import '../models/models.dart';
+import '../styles/styles.dart';
 
 class ImagePortraitGrid extends StatelessWidget {
   final ScrollController? scrollController;
@@ -19,7 +20,7 @@ class ImagePortraitGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF192133),
+      color: AppColors.backgroundColor,
       child: SafeArea(
         child: Scaffold(
           body: CustomScrollView(
@@ -59,8 +60,7 @@ class ImagePortraitGrid extends StatelessWidget {
                         },
                         child: movies[index].posterPath != null
                             ? CachedNetworkImage(
-                                imageUrl: Const.posterImageUrl +
-                                    movies[index].posterPath!,
+                                imageUrl: AppConstants.posterImageUrl + movies[index].posterPath!,
                                 imageBuilder: (context, imageProvider) {
                                   return Container(
                                     decoration: BoxDecoration(
@@ -81,8 +81,7 @@ class ImagePortraitGrid extends StatelessWidget {
                                   );
                                 },
                                 fadeInDuration: const Duration(milliseconds: 0),
-                                fadeOutDuration:
-                                    const Duration(milliseconds: 0),
+                                fadeOutDuration: const Duration(milliseconds: 0),
                               )
                             : Container(
                                 decoration: BoxDecoration(

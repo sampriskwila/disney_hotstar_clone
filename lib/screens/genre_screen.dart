@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../arguments/arguments.dart';
 import '../bloc/bloc.dart';
 import '../repositories/repositories.dart';
+import '../styles/styles.dart';
 
 class GenreScreen extends StatelessWidget {
   const GenreScreen({super.key});
@@ -15,7 +16,7 @@ class GenreScreen extends StatelessWidget {
         repository: TMDBRepository(),
       )..add(LoadGenresEvent()),
       child: Container(
-        color: const Color(0xFF192133),
+        color: AppColors.backgroundColor,
         child: SafeArea(
           child: Scaffold(
             body: CustomScrollView(
@@ -40,8 +41,7 @@ class GenreScreen extends StatelessWidget {
                     builder: (context, state) {
                       if (state is GenreLoaded) {
                         return SliverGrid(
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             crossAxisSpacing: 8,
                             mainAxisSpacing: 8,
@@ -66,8 +66,7 @@ class GenreScreen extends StatelessWidget {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      state.genres[index].name?.toUpperCase() ??
-                                          '',
+                                      state.genres[index].name?.toUpperCase() ?? '',
                                       style: const TextStyle(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 14,
@@ -87,8 +86,7 @@ class GenreScreen extends StatelessWidget {
                         );
                       }
                       return SliverGrid(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           crossAxisSpacing: 8,
                           mainAxisSpacing: 8,

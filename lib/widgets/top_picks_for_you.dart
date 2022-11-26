@@ -36,8 +36,8 @@ class TopPicksForYou extends StatelessWidget {
                   },
                 ),
                 ImagePortraitList(
-                  height: Const.screenWidth(context) / 2.5,
-                  width: Const.screenWidth(context) / 3.5,
+                  height: AppConstants.screenWidth(context) / 2.5,
+                  width: AppConstants.screenWidth(context) / 3.5,
                   images: state.movies,
                 ),
               ],
@@ -52,8 +52,8 @@ class TopPicksForYou extends StatelessWidget {
                 ),
                 ImagePortraitListError(
                   error: state.error,
-                  height: Const.screenWidth(context) / 2.5,
-                  width: Const.screenWidth(context) / 3.5,
+                  height: AppConstants.screenWidth(context) / 2.5,
+                  width: AppConstants.screenWidth(context) / 3.5,
                 ),
               ],
             );
@@ -65,8 +65,8 @@ class TopPicksForYou extends StatelessWidget {
                 onTap: () {},
               ),
               ImagePortraitListLoader(
-                height: Const.screenWidth(context) / 2.5,
-                width: Const.screenWidth(context) / 3.5,
+                height: AppConstants.screenWidth(context) / 2.5,
+                width: AppConstants.screenWidth(context) / 3.5,
               ),
             ],
           );

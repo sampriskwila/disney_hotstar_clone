@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../bloc/bloc.dart';
+import '../styles/styles.dart';
 import 'screens.dart';
 
 class RootScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _RootScreenState extends State<RootScreen> {
     return BlocProvider(
       create: (context) => BottomNavbarBloc(),
       child: Container(
-        color: const Color(0xFF192133),
+        color: AppColors.backgroundColor,
         child: SafeArea(
           child: Scaffold(
             key: _key,
@@ -126,15 +127,12 @@ class _RootScreenState extends State<RootScreen> {
                 return const HomeScreen();
               },
             ),
-            bottomNavigationBar:
-                BlocBuilder<BottomNavbarBloc, BottomNavbarState>(
+            bottomNavigationBar: BlocBuilder<BottomNavbarBloc, BottomNavbarState>(
               builder: (context, state) {
                 return BottomNavigationBar(
-                  currentIndex:
-                      BlocProvider.of<BottomNavbarBloc>(context).currentIndex,
+                  currentIndex: BlocProvider.of<BottomNavbarBloc>(context).currentIndex,
                   onTap: (value) {
-                    BlocProvider.of<BottomNavbarBloc>(context)
-                        .add(ChangeBottomNavbarEvent(value));
+                    BlocProvider.of<BottomNavbarBloc>(context).add(ChangeBottomNavbarEvent(value));
                   },
                   type: BottomNavigationBarType.fixed,
                   selectedFontSize: 12,

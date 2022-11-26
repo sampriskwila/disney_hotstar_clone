@@ -8,11 +8,11 @@ class TMDBRepository {
   final Dio _dio = Dio();
 
   Future<MovieResponse> getMoviesCarousel() async {
-    var params = {"api_key": Const.apiKey};
+    var params = {"api_key": AppConstants.apiKey};
 
     try {
       Response response = await _dio.get(
-        '${Const.baseUrl}/trending/movie/week',
+        '${AppConstants.baseUrl}/trending/movie/week',
         queryParameters: params,
       );
       return MovieResponse.withSuccess(response.data);
@@ -22,11 +22,11 @@ class TMDBRepository {
   }
 
   Future<MovieResponse> getTopPicks() async {
-    var params = {"api_key": Const.apiKey};
+    var params = {"api_key": AppConstants.apiKey};
 
     try {
       Response response = await _dio.get(
-        '${Const.baseUrl}/trending/movie/day',
+        '${AppConstants.baseUrl}/trending/movie/day',
         queryParameters: params,
       );
       return MovieResponse.withSuccess(response.data);
@@ -36,11 +36,11 @@ class TMDBRepository {
   }
 
   Future<MovieDetailResponse> getMovieDetails(int id) async {
-    var params = {"api_key": Const.apiKey};
+    var params = {"api_key": AppConstants.apiKey};
 
     try {
       Response response = await _dio.get(
-        '${Const.baseUrl}/movie/$id',
+        '${AppConstants.baseUrl}/movie/$id',
         queryParameters: params,
       );
       return MovieDetailResponse.withSuccess(response.data);
@@ -50,11 +50,11 @@ class TMDBRepository {
   }
 
   Future<MovieResponse> getSimilarMovies(int id) async {
-    var params = {"api_key": Const.apiKey};
+    var params = {"api_key": AppConstants.apiKey};
 
     try {
       Response response = await _dio.get(
-        '${Const.baseUrl}/movie/$id/similar',
+        '${AppConstants.baseUrl}/movie/$id/similar',
         queryParameters: params,
       );
       return MovieResponse.withSuccess(response.data);
@@ -64,11 +64,11 @@ class TMDBRepository {
   }
 
   Future<MovieVideoResponse> getMovieVideos(int id) async {
-    var params = {"api_key": Const.apiKey};
+    var params = {"api_key": AppConstants.apiKey};
 
     try {
       Response response = await _dio.get(
-        '${Const.baseUrl}/movie/$id/videos',
+        '${AppConstants.baseUrl}/movie/$id/videos',
         queryParameters: params,
       );
       return MovieVideoResponse.withSuccess(response.data);
@@ -78,11 +78,11 @@ class TMDBRepository {
   }
 
   Future<GenreResponse> getGenres() async {
-    var params = {"api_key": Const.apiKey};
+    var params = {"api_key": AppConstants.apiKey};
 
     try {
       Response response = await _dio.get(
-        '${Const.baseUrl}/genre/movie/list',
+        '${AppConstants.baseUrl}/genre/movie/list',
         queryParameters: params,
       );
       return GenreResponse.withSuccess(response.data);
@@ -92,11 +92,15 @@ class TMDBRepository {
   }
 
   Future<MovieResponse> getMoviesByGenre(int id, [int page = 1]) async {
-    var params = {"api_key": Const.apiKey, "with_genres": id, "page": page};
+    var params = {
+      "api_key": AppConstants.apiKey,
+      "with_genres": id,
+      "page": page
+    };
 
     try {
       Response response = await _dio.get(
-        '${Const.baseUrl}/discover/movie',
+        '${AppConstants.baseUrl}/discover/movie',
         queryParameters: params,
       );
       return MovieResponse.withSuccess(response.data);

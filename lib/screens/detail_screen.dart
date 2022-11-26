@@ -26,8 +26,8 @@ class DetailScreen extends StatelessWidget {
             return MovieDetailContent(
               movieId: movieId,
               movie: state.movie,
-              width: Const.screenWidth(context) / 3,
-              height: Const.screenWidth(context) / 2,
+              width: AppConstants.screenWidth(context) / 3,
+              height: AppConstants.screenWidth(context) / 2,
             );
           }
           if (state is MovieDetailError) {
@@ -37,8 +37,8 @@ class DetailScreen extends StatelessWidget {
           }
           return MovieDetailLoader(
             movieId: movieId,
-            width: Const.screenWidth(context) / 3,
-            height: Const.screenWidth(context) / 2,
+            width: AppConstants.screenWidth(context) / 3,
+            height: AppConstants.screenWidth(context) / 2,
           );
         },
       ),

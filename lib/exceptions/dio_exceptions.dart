@@ -5,30 +5,17 @@ class DioExceptions implements Exception {
 
   DioExceptions.withError(DioError error) {
     switch (error.type) {
-      case DioErrorType.cancel:
-        message = "Request to API server was cancelled";
-        break;
       case DioErrorType.connectTimeout:
+      case DioErrorType.receiveTimeout:
         message = "Connection timeout with API server";
         break;
-      case DioErrorType.receiveTimeout:
-        message = "Receive timeout in connection with API server";
-        break;
       case DioErrorType.response:
-        message = _handleError(
-          error.response?.statusCode,
-          error.response?.data,
-        );
-        break;
-      case DioErrorType.sendTimeout:
-        message = "Send timeout in connection with API server";
+        message = _handleResponseError(error.response?.statusCode);
         break;
       case DioErrorType.other:
         if (error.message.contains("SocketException")) {
           message = 'No internet';
-          break;
         }
-        message = "Unexpected error occurred";
         break;
       default:
         message = "Something went wrong";
@@ -36,7 +23,7 @@ class DioExceptions implements Exception {
     }
   }
 
-  String _handleError(int? statusCode, dynamic error) {
+  String _handleResponseError(int? statusCode) {
     switch (statusCode) {
       case 400:
         return 'Bad request';

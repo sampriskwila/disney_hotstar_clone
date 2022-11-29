@@ -7,8 +7,7 @@ import '../repositories/repositories.dart';
 part 'carousel_slider_event.dart';
 part 'carousel_slider_state.dart';
 
-class CarouselSliderBloc
-    extends Bloc<CarouselSliderEvent, CarouselSliderState> {
+class CarouselSliderBloc extends Bloc<CarouselSliderEvent, CarouselSliderState> {
   final TMDBRepository repository;
 
   CarouselSliderBloc({required this.repository}) : super(CarouselLoading()) {

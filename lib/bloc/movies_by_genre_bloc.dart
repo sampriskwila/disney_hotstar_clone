@@ -10,8 +10,7 @@ part 'movies_by_genre_state.dart';
 class MoviesByGenreBloc extends Bloc<MoviesByGenreEvent, MoviesByGenreState> {
   final TMDBRepository repository;
 
-  MoviesByGenreBloc({required this.repository})
-      : super(MoviesByGenreLoading()) {
+  MoviesByGenreBloc({required this.repository}) : super(MoviesByGenreLoading()) {
     on<LoadMoviesByGenreEvent>((event, emit) async {
       try {
         if (state is MoviesByGenreLoading) {
@@ -24,10 +23,8 @@ class MoviesByGenreBloc extends Bloc<MoviesByGenreEvent, MoviesByGenreState> {
         if (loadedMovies.page == 500) {
           emit(MoviesByGenreLoaded(loadedMovies.movies, loadedMovies.page));
         } else {
-          final response = await repository.getMoviesByGenre(
-              event.id, loadedMovies.page + 1);
-          emit(MoviesByGenreLoaded(
-              loadedMovies.movies + response.movies, response.page));
+          final response = await repository.getMoviesByGenre(event.id, loadedMovies.page + 1);
+          emit(MoviesByGenreLoaded(loadedMovies.movies + response.movies, response.page));
         }
       } catch (error) {
         emit(MoviesByGenreError(error.toString()));

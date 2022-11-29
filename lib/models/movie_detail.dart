@@ -44,9 +44,7 @@ class MovieDetail extends Equatable {
   factory MovieDetail.fromJson(Map<String, dynamic> json) {
     return MovieDetail(
       title: json['title'] as String?,
-      languages: (json['spoken_languages'] as List?)
-          ?.map((x) => Language.fromJson(x))
-          .toList(),
+      languages: (json['spoken_languages'] as List?)?.map((x) => Language.fromJson(x)).toList(),
       genres: (json['genres'] as List?)?.map((x) => Genre.fromJson(x)).toList(),
       posterPath: json['poster_path'] as String?,
       releaseDate: (json['release_date'] as String?)?.split('-')[0],

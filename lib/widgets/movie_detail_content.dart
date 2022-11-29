@@ -47,8 +47,7 @@ class MovieDetailContent extends StatelessWidget {
                       children: [
                         if (movie.posterPath != null)
                           CachedNetworkImage(
-                            imageUrl:
-                                AppConstants.posterImageUrl + movie.posterPath!,
+                            imageUrl: AppConstants.posterImageUrl + movie.posterPath!,
                             imageBuilder: (context, imageProvider) {
                               return Container(
                                 width: width,
@@ -104,10 +103,7 @@ class MovieDetailContent extends StatelessWidget {
                                   shrinkWrap: true,
                                   scrollDirection: Axis.horizontal,
                                   physics: const NeverScrollableScrollPhysics(),
-                                  itemCount:
-                                      (movie.languages?.isNotEmpty ?? true)
-                                          ? movie.languages!.length
-                                          : 1,
+                                  itemCount: (movie.languages?.isNotEmpty ?? true) ? movie.languages!.length : 1,
                                   separatorBuilder: (context, index) {
                                     return Container(
                                       margin: const EdgeInsets.symmetric(
@@ -122,9 +118,7 @@ class MovieDetailContent extends StatelessWidget {
                                   },
                                   itemBuilder: (context, index) {
                                     return Text(
-                                      (movie.languages?.isNotEmpty ?? true)
-                                          ? movie.languages![index].name!
-                                          : 'N/A',
+                                      (movie.languages?.isNotEmpty ?? true) ? movie.languages![index].name! : 'N/A',
                                       style: TextStyle(
                                         color: Colors.grey[600],
                                         fontSize: 12,
@@ -140,9 +134,7 @@ class MovieDetailContent extends StatelessWidget {
                                   shrinkWrap: true,
                                   scrollDirection: Axis.horizontal,
                                   physics: const NeverScrollableScrollPhysics(),
-                                  itemCount: (movie.genres?.isNotEmpty ?? true)
-                                      ? movie.genres!.length
-                                      : 1,
+                                  itemCount: (movie.genres?.isNotEmpty ?? true) ? movie.genres!.length : 1,
                                   separatorBuilder: (context, index) {
                                     return Container(
                                       margin: const EdgeInsets.symmetric(
@@ -157,9 +149,7 @@ class MovieDetailContent extends StatelessWidget {
                                   },
                                   itemBuilder: (context, index) {
                                     return Text(
-                                      (movie.genres?.isNotEmpty ?? true)
-                                          ? movie.genres![index].name!
-                                          : 'N/A',
+                                      (movie.genres?.isNotEmpty ?? true) ? movie.genres![index].name! : 'N/A',
                                       style: TextStyle(
                                         color: Colors.grey[600],
                                         fontSize: 12,
@@ -192,10 +182,7 @@ class MovieDetailContent extends StatelessWidget {
                                       ),
                                       alignment: PlaceholderAlignment.middle,
                                     ),
-                                    TextSpan(
-                                        text: movie.voteAverage
-                                                ?.toStringAsFixed(1) ??
-                                            'N/A'),
+                                    TextSpan(text: movie.voteAverage?.toStringAsFixed(1) ?? 'N/A'),
                                   ],
                                 ),
                               ),

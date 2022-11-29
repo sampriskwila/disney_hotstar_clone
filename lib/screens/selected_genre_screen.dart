@@ -53,8 +53,7 @@ class _SelectedGenreContentState extends State<SelectedGenreContent> {
       double currentScroll = _scrollController.offset;
 
       if (currentScroll >= (maxScroll * 0.9)) {
-        BlocProvider.of<MoviesByGenreBloc>(context)
-            .add(LoadMoviesByGenreEvent(widget.movieId));
+        BlocProvider.of<MoviesByGenreBloc>(context).add(LoadMoviesByGenreEvent(widget.movieId));
       }
     });
     super.initState();

@@ -17,8 +17,7 @@ class MovieVideoResponse {
 
   factory MovieVideoResponse.withSuccess(Map<String, dynamic> json) {
     return MovieVideoResponse(
-      videos:
-          (json['results'] as List).map((x) => MovieVideo.fromJson(x)).toList(),
+      videos: (json['results'] as List).map((x) => MovieVideo.fromJson(x)).toList(),
     );
   }
 }

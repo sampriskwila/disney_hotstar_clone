@@ -20,8 +20,7 @@ class _VideoPreviewState extends State<VideoPreview> {
 
   @override
   void initState() {
-    final MovieVideo video =
-        widget.videos.lastWhere((element) => element.type == 'Trailer');
+    final MovieVideo video = widget.videos.lastWhere((element) => element.type == 'Trailer');
     _youtubePlayerController = YoutubePlayerController(
       initialVideoId: video.key ?? '',
       flags: const YoutubePlayerFlags(

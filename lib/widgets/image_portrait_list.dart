@@ -35,8 +35,7 @@ class ImagePortraitList extends StatelessWidget {
             },
             child: images[index].posterPath != null
                 ? CachedNetworkImage(
-                    imageUrl:
-                        AppConstants.posterImageUrl + images[index].posterPath!,
+                    imageUrl: AppConstants.posterImageUrl + images[index].posterPath!,
                     imageBuilder: (context, imageProvider) {
                       return Container(
                         width: width,

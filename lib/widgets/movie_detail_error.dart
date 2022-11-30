@@ -10,15 +10,13 @@ class MovieDetailErrors extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Error'),
-          elevation: 0,
-        ),
-        body: Center(
-          child: Text(error),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Error'),
+        elevation: 0,
+      ),
+      body: Center(
+        child: Text(error),
       ),
     );
   }

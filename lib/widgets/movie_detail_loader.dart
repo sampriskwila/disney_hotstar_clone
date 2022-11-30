@@ -16,19 +16,19 @@ class MovieDetailLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Loading...'),
-          elevation: 0,
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        body: ListView(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Loading...'),
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      body: SafeArea(
+        child: ListView(
           children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16),

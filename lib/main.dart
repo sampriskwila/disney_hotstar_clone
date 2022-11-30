@@ -8,7 +8,9 @@ import 'screens/screens.dart';
 import 'styles/styles.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+    statusBarColor: AppColors.backgroundColor, // for Android
+  ));
   runApp(const App());
 }
 
